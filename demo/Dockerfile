@@ -1,4 +1,7 @@
-FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=target/*.jar
+FROM eclipse-temurin:17-jdk
+VOLUME /tmp
+ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
+
+
